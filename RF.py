@@ -1,27 +1,23 @@
 import sys
 import random as rnd
 
-import numpy as np
  
 def Creation(a):
+    with open("res.txt","w") as t:
+    	for i in a:
+    		t.write(str(i[0])+" "+'%s\n'%str(i[1]))
     
-    w = np.array(a)
-    np.savetxt('modulations.txt', w, fmt='%s')
  
 def writing(): 
-    #список неумерации
+    
     s = []
     for i in range(300):
         s.append(str(i)) 
-    #список неумерации
-
-    #
+    
     mod_psk = "PSK"
     mod_cum = "QAM"
     mod_num = ["B", "4-", "8-", "16-", "32-", "64-", "128-", "256-"]
-    #
-
-    #список модуляций
+    
     n = []
     for i in range(300):
         r1 = rnd.randint(0,2)
@@ -41,23 +37,13 @@ def writing():
             if (q1 == "4-QAM"):
                 q1 = "QPSK"
             n.append(q1)
-    #print(n)
-    #список модуляций
- 
-    #создание матрицы
+    
     z = [s, n]
-    #print(z)
-    #создание матрицы
+    
 
-    #print(z)
-
-    #транспонирование
+    
     x = [list(i) for i in zip(*z)]
-    #транспонирование
     
-    #print(x)
-    
-    #обращение к записыванию в файл
     Creation(x)
  
 
@@ -82,6 +68,5 @@ def main():
             boolka = False
         set(ans)
  
-main()
-#writing()  
+writing()
 
