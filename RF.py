@@ -4,6 +4,10 @@ import random as rnd
  
 def Creation(a):
     with open("res.txt","w") as t:
+    	a[0][1] = 'BPSK'
+    	a[1][1] = 'BPSK'
+    	a[2][1] = 'BPSK'
+    	a[3][1] = 'BPSK'
     	for i in a:
     		t.write(str(i[0])+" "+'%s\n'%str(i[1]))
     
@@ -69,4 +73,3 @@ def main():
         set(ans)
  
 writing()
-
