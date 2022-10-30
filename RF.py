@@ -24,8 +24,7 @@ def writing():
     
     n = []
     for i in range(300):
-        r1 = rnd.randint(0,2)
-        if (r1 == 0):
+        
             r2 = rnd.randint(0,len(mod_num)-1)
             q = [mod_num[r2],mod_psk]
             
@@ -33,15 +32,7 @@ def writing():
             if (q == "4-PSK"):
                 q = "QPSK"
             n.append(q)
-        else:
-            r3 = rnd.randint(1,len(mod_num)-1)
-            #q1 = [mod_num[r3],mod_cum]
-            q1 = [mod_num[r2],mod_psk]
-            
-            q1 = ''.join(list(q1[0 : 2]))
-            if (q1 == "4-QAM"):
-                q1 = "QPSK"
-            n.append(q1)
+        
     
     z = [s, n]
     
@@ -53,24 +44,6 @@ def writing():
  
 
     
- 
-def set(q):
-    if int(q) == 1:
-        print("select selection's size:")
-        
-        writing()
     
- 
-def main():  
-    boolka = True
-    while boolka == True:
-        print ("select mode:")
-        print("1 - create random file\n0 - exit")
-        ans = int(input())
-    
-        if (ans == 0):
-            print("fuck off")
-            boolka = False
-        set(ans)
  
 writing()
