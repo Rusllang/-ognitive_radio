@@ -35,7 +35,8 @@ def writing():
             n.append(q)
         else:
             r3 = rnd.randint(1,len(mod_num)-1)
-            q1 = [mod_num[r3],mod_cum]
+            #q1 = [mod_num[r3],mod_cum]
+            q1 = [mod_num[r2],mod_psk]
             
             q1 = ''.join(list(q1[0 : 2]))
             if (q1 == "4-QAM"):
